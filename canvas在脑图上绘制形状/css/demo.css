@@ -1,0 +1,92 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Rehack (www.rehack.cn)
+ * @date    2015-11-26 22:45:45
+ * @version $Id$
+ */
+*{margin:0;padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none;}
+.wraper{
+    height: 615px;
+    background: #fff;
+    margin-top: 30px;
+    width: 1200px;
+    margin: 0 auto;
+}
+.wraper .nsj{
+    padding: 58px 20px 58px 20px;
+    position: relative;
+    height: 400px;
+}
+.wraper .nsj .xiaonao{
+    border: 1px solid  #ebebeb;
+    border-radius: 10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+    -webkit-box-shadow:1px 1px 3px #d6d3d3;
+    -moz-box-shadow:1px 1px 3px #d6d3d3;
+    -ms-box-shadow:1px 1px 3px #d6d3d3;
+    -o-box-shadow:1px 1px 3px #d6d3d3;
+    box-shadow:1px 1px 3px #d6d3d3;
+    width: 315px;
+    height: 115px;
+    padding: 10px;
+    line-height: 26px;
+    position: absolute;
+    color: #0565c8;
+}
+.wraper .nsj .xiaonao p.xninfo{
+    color: #8d8d8d;
+}
+.wraper .nsj .xiaonao p.active{
+    color: #fff;
+}
+.wraper .nsj .active{
+    background: #0565c8;
+    color: #fff;
+    opacity: 1;
+    filter:alpha(opacity=100);
+}
+.wraper .nsj .xn02{
+    top: 210px;
+    left: 80px;
+}
+.wraper .nsj .xn03{
+    top: 360px;
+}
+.wraper .nsj .xn04{
+    /*top: 360px;*/
+    right: 20px;
+}
+.wraper .nsj .xn05{
+    top: 210px;
+    right: 80px;
+}
+.wraper .nsj .xn06{
+    top: 360px;
+    right: 20px;
+}
+.wraper .nsj .xiaonao .xnao{
+    font-size: 16px;
+
+}
+.wraper .nsj .xiaonao .xnao i{
+    font-size: 24px;
+    margin-right: 10px;
+}
+.wraper .nsj .nao{
+    position: relative;
+    top: -22px;
+    left: 405px;
+    width: 342px;
+    height: 422px;
+}
+.wraper .nsj .nao .points{
+    position: absolute;
+    top: -27px;
+    left: 0px;
+}
