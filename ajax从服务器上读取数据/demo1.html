@@ -11,14 +11,12 @@
 </head>
 <body>
     <button id="btn">ajax读取数据</button>
-    <ul></ul>
     <script>
-        var Obtn = document.getElementById('btn');
-    	var Oul=document.getElementsByTagName('ul')[0];
-        Obtn.onclick = function() {
+        var oBtn = document.getElementById('btn');
+        oBtn.onclick = function() {
             ajax('data1.txt?t=' + new Date().getTime(), function(str) {
-            	// 在数据文件后加?t=new Date().getTime()是为了禁止缓存
-                var conten=str; 
+                // 在数据文件后加?t=new Date().getTime()是为了阻止缓存
+                var conten = str;
                 alert(conten);
             }, function() {
                 alert('失败');

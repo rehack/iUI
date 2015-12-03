@@ -13,20 +13,20 @@
     <button id="btn">ajax读取数据</button>
     <ul></ul>
     <script>
-        var Obtn = document.getElementById('btn');
-    	var Oul=document.getElementsByTagName('ul')[0];
-        Obtn.onclick = function() {
+        var oBtn = document.getElementById('btn');
+        var oUl = document.getElementsByTagName('ul')[0];
+        oBtn.onclick = function() {
             ajax('data.json?t=' + new Date().getTime(), function(str) {
-            	// 在数据文件后加?t=new Date().getTime()是为了禁止缓存
+                // 在数据文件后加?t=new Date().getTime()是为了阻止缓存
                 // var conten=str;
                 // var conten = eval(str);
-                conten = JSON.parse(str);//JSON.parse()是json解析器，把json解析成JavaScript对象，这种只能识别json文本，不会编译脚本，这种比eval()更安全，eval() 函数可编译并执行任何 JavaScript 代码。这隐藏了一个潜在的安全问题。
+                conten = JSON.parse(str); //JSON.parse()是json解析器，把json解析成JavaScript对象，这种只能识别json文本，不会编译脚本，这种比eval()更安全，eval() 函数可编译并执行任何 JavaScript 代码。这隐藏了一个潜在的安全问题。
                 // console.log(conten);
                 // console.log(conten.pepole[1].name);
-                for(var i=0;i<conten.pepole.length;i++){
-                	var Oli=document.createElement('li');
-                	Oli.innerHTML='<label>姓名</label><b>'+conten.pepole[i].name+'</b><label>年龄</label><b>'+conten.pepole[i].age+'</b><label>性别</label><b>'+conten.pepole[i].sex+'</b>';
-                	Oul.appendChild(Oli);
+                for (var i = 0; i < conten.pepole.length; i++) {
+                    var oLi = document.createElement('li');
+                    oLi.innerHTML = '<label>姓名</label><b>' + conten.pepole[i].name + '</b><label>年龄</label><b>' + conten.pepole[i].age + '</b><label>性别</label><b>' + conten.pepole[i].sex + '</b>';
+                    oUl.appendChild(oLi);
                 }
                 // alert(conten[1].sex);
             }, function() {

@@ -13,18 +13,18 @@
     <button id="btn">ajax读取数据</button>
     <ul></ul>
     <script>
-        var Obtn = document.getElementById('btn');
-    	var Oul=document.getElementsByTagName('ul')[0];
-        Obtn.onclick = function() {
+        var oBtn = document.getElementById('btn');
+        var oUl = document.getElementsByTagName('ul')[0];
+        oBtn.onclick = function() {
             ajax('data2.txt?t=' + new Date().getTime(), function(str) {
-            	// 在数据文件后加?t=new Date().getTime()是为了禁止缓存
+                // 在数据文件后加?t=new Date().getTime()是为了阻止缓存
                 // var conten=str;
                 var conten = eval(str);
                 // console.log(conten.length);
-                for(var i=0;i<conten.length;i++){
-                	var Oli=document.createElement('li');
-                	Oli.innerHTML='<label>姓名</label><b>'+conten[i].name+'</b><label>年龄</label><b>'+conten[i].age+'</b><label>性别</label><b>'+conten[i].sex+'</b>';
-                	Oul.appendChild(Oli);
+                for (var i = 0; i < conten.length; i++) {
+                    var oLi = document.createElement('li');
+                    oLi.innerHTML = '<label>姓名</label><b>' + conten[i].name + '</b><label>年龄</label><b>' + conten[i].age + '</b><label>性别</label><b>' + conten[i].sex + '</b>';
+                    oUl.appendChild(oLi);
                 }
                 // alert(conten[1].sex);
             }, function() {
