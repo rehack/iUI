@@ -19,7 +19,7 @@
             ajax('data2.txt?t=' + new Date().getTime(), function(str) {
                 // 在数据文件后加?t=new Date().getTime()是为了阻止缓存
                 // var conten=str;
-                var conten = eval(str);
+                var conten = eval(str); //eval() 函数可计算某个字符串，并执行其中的的 JavaScript 代码。
                 // console.log(conten.length);
                 for (var i = 0; i < conten.length; i++) {
                     var oLi = document.createElement('li');
