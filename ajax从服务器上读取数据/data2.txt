@@ -1,0 +1,5 @@
+[
+{name:'zhang',age:12,sex:'男'},
+{name:'wang',age:23,sex:'女'},
+{name:'zhou',age:53,sex:'nan'}
+]

@@ -1,0 +1,13 @@
+{"pepole":[
+{
+    "name":"zhang",
+    "age":12,
+    "sex":"男"
+},
+{
+	"name":"li",
+	"age":23,
+	"sex":"女"
+}
+]
+}

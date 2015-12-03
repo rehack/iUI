@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Ajax读取静态TXT文本数据</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="js/ajax.js"></script>
+</head>
+<body>
+    <button id="btn">ajax读取数据</button>
+    <ul></ul>
+    <script>
+        var Obtn = document.getElementById('btn');
+    	var Oul=document.getElementsByTagName('ul')[0];
+        Obtn.onclick = function() {
+            ajax('data1.txt?t=' + new Date().getTime(), function(str) {
+            	// 在数据文件后加?t=new Date().getTime()是为了禁止缓存
+                var conten=str; 
+                alert(conten);
+            }, function() {
+                alert('失败');
+            });
+        }
+    </script>
+    
+</body>
+</html>
