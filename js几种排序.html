@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>js几种排序方法</title>
+    <style>
+	    .btn-line {
+	        width: 900px;
+	        padding: 4px 0;
+	    }
+	    
+	    .opt-line {
+	        font-size: 14px;
+	    }
+	    
+	    textarea {
+	        width: 900px;
+	        background: #eee;
+	    }
+    </style>
+</head>
+
+<body>
+    <textarea name="arr" id="arr" rows="5">56,13,98,78,21,90,17,28,18,77,46,93,15,80,44,21,90,17,28,18,77,46,93,15,80,44,10,19,91,95,59,36</textarea>
+    <div class="opt-line">
+        <input type="checkbox" name="forLog" id="for-log">
+        <label for="for-log">打印过程</label>
+    </div>
+    <div class="btn-line">
+        <button id="bubble">冒泡排序</button>
+        <button id="selection">选择排序</button>
+        <button id="insertion">插入排序</button>
+        <button id="quick">快速排序</button>
+        <button id="merge">合并排序</button>
+    </div>
+    <textarea name="output" id="output" rows="10" readonly></textarea>
+    <div id="log"></div>
+    <script>
+	    var $ = function(id) { //简化获取dom对象的方法
+	            return document.getElementById(id);
+	        },
+	        arr = [], //待排序数列
+	        setArr = function() { //设置带排序数列，为了响应每次的更改
+	            var a = $("arr").value.split(/\D+/); //用所有不是数字的字符作为分割符,分割获取数组
+	            arr = [];
+	            for (var i = 0; i < a.length; i++) {
+	                arr.push(a[i] | 0); //转换成数字，如果有非数字字符统一转换成0， '|'表示位运算的或。
+	            }
+	        },
+	        swap = function(a, b, c) { //交换数组的两个元素，a:待操作数组, b&c:需要交换的元素下标
+	            if (b == c) return; //没必要交换了
+	            var t = a[b];
+	            a[b] = a[c];
+	            a[c] = t;
+	            if ($("for-log").checked) {
+	                println(arr);
+	            }
+	        },
+	        replaceTo = function(a, b, c) { //插入 b:待插入位置， c:插入元素下标
+	            if (b == c) return; //没必要插入了
+	            var t = a[c];
+	            a.splice(c, 1); //把a[c]从数组中删除
+	            a.splice(b, 0, t); //把t插入在b位置
+	            if ($("for-log").checked) {
+	                println(arr);
+	            }
+	        },
+	        merge = function(a, b) { //合并两个升序列表
+	            var ta, tb, tempA = [];
+	            while (a.length && b.length) { //待合并数组都木有循环完
+	                ta = a[0];
+	                tb = b[0];
+	                if (ta > tb) { //哪个小选哪个先放到目标数组里
+	                    tempA.push(tb);
+	                    b.splice(0, 1);
+	                } else {
+	                    tempA.push(ta);
+	                    a.splice(0, 1);
+	                }
+	            }
+	            var t = a.length ? a : b;
+	            for (var i = 0; i < t.length; i++) { //没有循环到头儿的都接到目标数组的尾部
+	                tempA.push(t[i]);
+	            }
+	            if ($("for-log").checked) {
+	                println(tempA);
+	            }
+	            return tempA;
+	        },
+	        println = function(str) {
+	            $('output').value += $('output').value.split('\n').length + "\t" + str + "\n";
+	        };
+
+
+	    var sort = {
+	        'bubble': function() {
+	            for (var i = 0; i < arr.length; i++) {
+	                for (var j = 0; j < arr.length; j++) {
+	                    if (arr[j] > arr[j + 1]) swap(arr, j, j + 1); //相邻的交换
+	                }
+	            }
+	        },
+	        'selection': function() {
+	            for (var i = 0; i < arr.length; i++) {
+	                var flag = i;
+	                for (var j = i + 1; j < arr.length; j++) {
+	                    if (arr[j] < arr[flag]) flag = j;
+	                }
+	                swap(arr, i, flag); //每次找到一个最小的换到目标位置
+	            }
+	        },
+	        'insertion': function() {
+	            for (var i = 1; i < arr.length; i++) {
+	                var ins = 0,
+	                    j = 0;
+	                while (j < i && arr[i] > arr[j]) {
+	                    ins = ++j;
+	                }
+	                replaceTo(arr, ins, i); //当前元素插入有序数列
+	            }
+	        },
+	        'quick': function() {
+	            function qk(a, l, r) {
+	                var pos = l,
+	                    t = a[l];
+	                if (l < r) {
+	                    for (var i = l + 1; i <= r; i++) {
+	                        if (a[i] < t) {
+	                            replaceTo(a, l, i);
+	                            pos++;
+	                        } //拿首元素将数列分开，小的放在左边
+	                    }
+	                    qk(a, l, pos - 1);
+	                    qk(a, pos + 1, r);
+	                }
+	            }
+	            qk(arr, 0, arr.length - 1);
+	        },
+	        'merge': function(o) {
+	            o = o || {};
+	            var pos = 0,
+	                arrays = [],
+	                temp = [];
+	            for (var i = 1; i < arr.length; i++) {
+	                if (arr[i] < arr[i - 1]) {
+	                    arrays.push(arr.slice(pos, i)); //存储一份数组的数组，以备合并使用
+	                    pos = i;
+	                }
+	            }
+	            arrays.push(arr.slice(pos)); //漏了最后一串
+	            temp = arrays[0];
+	            for (var t = 1; t < arrays.length; t++) { //之前存好的数组，依次合并。
+	                temp = merge(temp, arrays[t]);
+	            }
+	            arr = temp;
+	        }
+	    };
+
+
+
+	    var exec = function(type, o) { //执行过程
+	        setArr(); //1.初始化待排序数组
+	        var begin = new Date().getTime();
+	        $('output').value = "";
+	        sort[type](o); //2.开始排序
+	        println("result:\n\t" + arr + ";\t time:" + (new Date().getTime() - begin)); //3.排序结束，打印结果以及耗时。
+	    };
+	    $('bubble').onclick = function() {
+	        exec('bubble');
+	    };
+	    $('selection').onclick = function() {
+	        exec('selection');
+	    };
+	    $('insertion').onclick = function() {
+	        exec('insertion');
+	    };
+	    $('quick').onclick = function() {
+	        exec('quick');
+	    };
+	    $('merge').onclick = function() {
+	        exec('merge');
+	    };
+    </script>
+</body>
+
+</html>
