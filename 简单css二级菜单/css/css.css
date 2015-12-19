@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Rehack (www.rehack.cn)
+ * @date    2015-12-19 10:00:18
+ * @version $Id$
+ */
+ 
+/*css reset*/
+body,div,ul,ol,li,img,p,dl,dt,dd,a,span,input,h1,h2,h3,h4,h5,h6{margin: 0;padding: 0;}
+body{font-size: 14px;font-family: 微软雅黑,arial;color: #666;}
+a{text-decoration: none;color: #FF7200;}
+img{border: 0;}
+ul{overflow: hidden;list-style: none;}
+.clear{clear: both;}
+.ovhd{overflow: hidden;}
+.none{display: none;}
+.left{float: left;}
+.right{float: right;}
+.mr0{margin-right: 0;}
+
+/*nav*/
+.nav{
+	width: 100%;
+	height: 80px;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	margin-top: 20px;
+}
+.nav ul{
+	width: 1100px;
+	height: 80px;
+	margin: 0 auto;
+	overflow: visible;
+}
+.nav ul li{
+	width: 219px;
+	height: 80px;
+	border-right: 1px solid #ddd;
+	float: left;
+	text-align: center;
+	line-height: 80px;
+	position: relative;
+	
+}
+.nav ul li:hover{
+	background: orange;
+}
+.nav ul li:hover a{
+	color: #fff;
+}
+.nav ul li:hover .menu2{
+	display: block;
+}
+.nav ul li .menu2{
+	display: none;
+	width: 220px;
+	z-index: 999;
+	position: absolute;
+	top: 80px;
+	left: 0;
+	background: #ccc;
+	border-top: 1px solid #fff;
+}
+.nav ul li .menu2 a{
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	clear: both;
+	border-bottom: 1px solid #ddd;
+}
+.nav ul li .menu2 a:hover{
+	background: blue;
+}
