@@ -1,13 +1,13 @@
 @charset "UTF-8";
 /**
- * 
+ *
  * @authors Rehack (www.rehack.cn)
  * @date    2015-12-19 10:00:18
  * @version $Id$
  */
- 
+
 /*css reset*/
-body,div,ul,ol,li,img,p,dl,dt,dd,a,span,input,h1,h2,h3,h4,h5,h6{margin: 0;padding: 0;}
+body,div,ul,ol,li,img,p,dl,dt,dd,a,span,input,h1,h2,h3,h4,h5,h6,table,th,tr,td{margin: 0;padding: 0;}
 body{font-size: 14px;font-family: 微软雅黑,arial;color: #666;}
 a{text-decoration: none;color: #FF7200;}
 img{border: 0;}
