@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>图片轮播-合并函数</title>
+<style>
+    *{margin: 0;padding: 0;}
+    .wrapper{
+        width: 400px;
+        height: 400px;
+        margin: 0 auto;
+        border: 1px solid #000;
+        position: relative;
+    }
+    .wrapper img{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .wrapper ul{
+        position: absolute;
+        right: 0;
+        top: 380px;
+    }
+    .wrapper ul li{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: blue;
+        color: #fff;
+        text-align: center;
+        cursor: pointer;
+    }
+    .wrapper ul li.active{
+        background: orange;
+    }
+</style>
+</head>
+<body>
+    <div class="wrapper">
+        <img src="../pubimages/1.jpg" alt="">
+        <img src="../pubimages/2.jpg" alt="">
+        <img src="../pubimages/3.jpg" alt="">
+        <img src="../pubimages/4.jpg" alt="">
+        <ul>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+
+    <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+    <script>
+        $(function(){
+            var timer=setInterval(play,1000);
+            var sta=0;
+
+            $(".wrapper li").hover(function(){
+                clearInterval(timer);
+                sta=$(this).index();
+                // console.log(sta)
+                tab(sta);
+
+            },function(){
+                timer=setInterval(play,1000);
+            })
+
+            /**
+             * [play 自动播放函数]
+             * @return {[type]} [description]
+             */
+            function play(){
+                sta++;
+                sta=(sta==4)?sta==0:sta;
+                tab(sta);
+            }
+
+            /**
+             * [tab 控制图片和下标的显示]
+             * @param  {[number]} num [图片和下标对应的索引值]
+             * @return {[type]}     [description]
+             */
+            function tab(num){
+                $(".wrapper img").hide();
+                $(".wrapper img").eq(num).show();
+                $(".wrapper li").removeClass("active");
+                $(".wrapper li").eq(num).addClass("active");
+            }
+
+        })
+    </script>
+</body>
+</html>
