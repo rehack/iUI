@@ -17,4 +17,4 @@ ul{overflow: hidden;list-style: none;}
 .none{display: none;}
 .left{float: left;}
 .right{float: right;}
-.mr0{margin-right: 0;}
+.mr0{margin-right: 0!important;}
