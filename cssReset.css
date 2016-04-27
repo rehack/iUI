@@ -10,7 +10,7 @@
 body,div,ul,ol,li,img,p,dl,dt,dd,a,span,input,h1,h2,h3,h4,h5,h6,table,th,tr,td{margin: 0;padding: 0;}
 body{font-size: 14px;font-family: 微软雅黑,arial;color: #666;}
 a{text-decoration: none;color: #FF7200;}
-img{border: 0;}
+img{border: 0;display:block;}
 ul{overflow: hidden;list-style: none;}
 .clear{clear: both;}
 .ovhd{overflow: hidden;}
