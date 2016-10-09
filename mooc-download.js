@@ -39,7 +39,7 @@ $(selector).each(function(i, e) {
     });
 });
 
-// 把这段在类似http://www.imooc.com/learn/258这样的页面下的console控制台运行
+// 把这段在类似http://www.imooc.com/learn/258这样的页面下的console控制台运行，然后复制出视频列表到后缀名为.downlist的文件中，然后用IDM批量导入助手导入进行批量下载。
 
 
 // 获取到的json数据格式
