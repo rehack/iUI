@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>js检测手机屏幕尺寸</title>
+</head>
+<body>
+    <script src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>
+        var width=document.documentElement.clientWidth;
+        var height=document.documentElement.clientHeight;
+        var jqW=$(window).width();
+        var scrollWidth = document.body.scrollWidth;
+        var dpi = window.devicePixelRatio;//获取屏幕分辨率
+
+
+        document.writeln('clientWidth:'+width+'<br />');
+        document.writeln('clientHeight:'+height+'<br />');
+        document.writeln('jqWidth:'+jqW+'<br />');
+        document.writeln('scrollWidth:'+scrollWidth+'<br />');
+        document.writeln('dpi:'+dpi+'<br />');
+
+
+
+    </script>
+</body>
+</html>
