@@ -25,3 +25,6 @@ WLAN 无线局域网
 通俗点说，WAN口是对外的接口，和运营商、上级网络打交道。
 LAN和WLAN是对内的接口，内部的电脑、手机、PAD，都是接入到LAN或者WLAN。
 一般的无线路由器，包含了完整的LAN、WAN、WLAN功能。
+
+4.刷新本地DNS缓存命令
+ipconfig /flushdns
