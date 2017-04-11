@@ -18,3 +18,4 @@ http://www.igao7.com/news/201609/rc4ZC5ZV6PnXverw.html
 在cmd中输入wmic进入命令行系统管理执行脚本界面
 通过cpu get *可以查看cpu的具体情况（注意空格）
 过命令memorychip可以进行查看内存情况
+
