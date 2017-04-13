@@ -23,9 +23,10 @@ function get_lat_and_lng_ByIP($ip,$ak)
     // $content = file_get_contents("http://api.map.baidu.com/highacciploc/v1?qcip=119.6.99.130&qterm=pc&ak=R6UvUhYRQSNFf3mealWKaIh3fffyyjD9&coord=bd09ll");
     $json = json_decode($content);
 
-    $lng=$json->{'content'}->{'location'}->{'lng'};//提取经度数据
-
-    $lat=$json->{'content'}->{'location'}->{'lat'};//提取纬度数据
+    //提取经度数据
+    $lng=$json->{'content'}->{'location'}->{'lng'};
+    //提取纬度数据
+    $lat=$json->{'content'}->{'location'}->{'lat'};
 
     echo "当前ip：".$ip;
     echo "<br>";
