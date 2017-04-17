@@ -3,6 +3,7 @@
  * http://lbsyun.baidu.com/index.php?title=webapi/high-acc-ip
  * 根据客户端ip地址调用百度高精度IP定位API 获取详细的地理位置
  * 根据获取到的经纬度在百度地图中定位
+ * 测试ak:  wa917ylnbHYETG8wFTLFuzuqnwCVZN1F
  */
 header("Content-type: text/html; charset=utf-8");
 
