@@ -26,7 +26,8 @@ $(selector).each(function(i, e) {
             name: name
         });
         xmlStr += '<video><url>' + url + '</url><name>' + name + '</name></video>';
-        textStr += 'filename=' + name + '&fileurl=' + url + '\n';
+        // textStr += 'filename=' + name + '&fileurl=' + url + '\n'; //y用于IDM下载方式
+        textStr += 'wget -O "' + name +'.mp4" ' + url + '\n'; //用于shell下载方式
         if (videoes.length == total) {
             console.log('共' + total + '个视频。');
             console.log('已完成' + videoes.length + '个视频。');
@@ -38,6 +39,8 @@ $(selector).each(function(i, e) {
         };
     });
 });
+
+
 
 // 把这段在类似http://www.imooc.com/learn/258这样的页面下的console控制台运行，然后复制出视频列表到后缀名为.downlist的文件中(GBK编码)，然后用IDM批量导入助手导入进行批量下载。
 
@@ -57,3 +60,33 @@ $(selector).each(function(i, e) {
     },
     "msg": "\u6210\u529f"
 }
+
+// 脚本二：
+(function () {
+    document.cmd = '';
+    var dic = {};
+    function getJsonCallback(json) {
+        var result = json.data.result;
+        var data = { name: result.name, id: result.mid, url: result.mpath[0] };
+        var cmd = 'wget -O "' + dic[data.id] + " - " + data.name + '.mp4" ' + data.url;
+        console.log(cmd);
+        document.cmd += cmd;
+        document.cmd += '\r\n';
+    }
+
+    var index = 1;
+    $('.J-media-item').each(function () {
+        var url = $(this).attr('href');
+        var data = url.split('/');
+        var type = data[1];
+        var id = data[2];
+        if(type != 'video'){
+            return;
+        }
+
+        var jsonPath = "http://www.imooc.com/course/ajaxmediainfo/?mid=" + id + "&mode=flash";
+        dic[id] = index;
+        $.getJSON(jsonPath, getJsonCallback);
+        index++;
+    });
+})();
