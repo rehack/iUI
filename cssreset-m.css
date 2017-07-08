@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/**
+ *
+ * @authors Rehack (www.rehack.cn)
+ * @date    2015-12-19 10:00:18
+ * @version $Id$
+ */
+
+/*mobile css reset*/
+body,div,ul,ol,li,img,p,dl,dt,dd,a,span,input,h1,h2,h3,h4,h5,h6,table,th,tr,td,::before,::after{margin: 0;padding: 0;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;/*元素以边框开始计算宽度 百分百布局防止溢出*/}
+body{font-size: 14px;font-family: sans-serif,arial;}
+a{text-decoration: none;color: #FF7200;}
+img{border: 0;display:block;}
+ul{overflow: hidden;list-style: none;}
+table {border-collapse:collapse;border-spacing:0;}
+input{border: 0;outline: none;-webkit-appearance:none;-moz-appearance:none;appearance:none;/*清除元素外观样式*/}
+input,a,button{tap-highlight-color: transparent;-webkit-tap-highlight-color: transparent;-moz-tap-highlight-color: transparent;/*去除点击高亮效果*/}
