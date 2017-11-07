@@ -20,7 +20,9 @@ function get_lat_and_lng_ByIP($ip,$ak)
     {
         return 'IP不能为空';
     }
-    $content = file_get_contents("http://api.map.baidu.com/highacciploc/v1?qcip=$ip&ak=$ak&qterm=$qterm&extensions=3&coord=bd09ll");
+    // $content = file_get_contents("http://api.map.baidu.com/highacciploc/v1?qcip=$ip&ak=$ak&qterm=$qterm&extensions=3&coord=bd09ll");
+    $content = file_get_contents("http://api.map.baidu.com/location/ip?ak=Ka7cXDHShasIK6hCEPiTQD9auM9luGPk&ip=188.71.249.1&coor=bd09ll");
+    //
     // $content = file_get_contents("http://api.map.baidu.com/highacciploc/v1?qcip=119.6.99.130&qterm=pc&ak=R6UvUhYRQSNFf3mealWKaIh3fffyyjD9&coord=bd09ll");
     $json = json_decode($content);
 

@@ -7,20 +7,26 @@
 <title>js检测手机屏幕尺寸</title>
 </head>
 <body>
+    <!--
+    window.devicePixelRatio是设备上物理像素和设备独立像素(device-independent pixels (dips))的比例。
+    公式表示就是：window.devicePixelRatio = 物理像素 / dips
+
+    dip或dp,（device independent pixels，设备独立像素）与屏幕密度有关。dip可以用来辅助区分视网膜设备还是非视网膜设备。
+    -->
     <script src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.min.js"></script>
     <script>
         var width=document.documentElement.clientWidth;
         var height=document.documentElement.clientHeight;
         var jqW=$(window).width();
         var scrollWidth = document.body.scrollWidth;
-        var dpi = window.devicePixelRatio;//获取屏幕分辨率
+        var dpr = window.devicePixelRatio;//设备像素比
 
-
-        document.writeln('clientWidth:'+width+'<br />');
-        document.writeln('clientHeight:'+height+'<br />');
-        document.writeln('jqWidth:'+jqW+'<br />');
-        document.writeln('scrollWidth:'+scrollWidth+'<br />');
-        document.writeln('dpi:'+dpi+'<br />');
+        document.writeln('userAgent：'+navigator.userAgent + '<br /><br>');
+        document.writeln('clientWidth：'+width+'<br />');
+        document.writeln('clientHeight：'+height+'<br />');
+        document.writeln('jqWidth：'+jqW+'<br />');
+        document.writeln('scrollWidth：'+scrollWidth+'<br />');
+        document.writeln('devicePixelRatio：'+dpr+'<br />');
 
 
 
