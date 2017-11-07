@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>js检测手机屏幕尺寸</title>
+<title>js检测手机UA-屏幕尺寸</title>
 </head>
 <body>
     <!--
@@ -28,6 +28,26 @@
         document.writeln('scrollWidth：'+scrollWidth+'<br />');
         document.writeln('devicePixelRatio：'+dpr+'<br />');
 
+        /*
+            //检测微信浏览器
+            function isWechat() {
+                var ua = navigator.userAgent.toLowerCase();
+                return /micromessenger/i.test(ua) || typeof navigator.wxuserAgent !== 'undefined';
+            }
+
+            //检测ios浏览器
+            function isIOS(){
+                var u = navigator.userAgent;
+                return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+            }
+
+            //检测小米浏览器
+            function isMi() {
+                var ua = navigator.userAgent.toLowerCase();
+                return /miuibrowser/i.test(ua);
+            }
+
+         */
 
 
     </script>
