@@ -8,7 +8,7 @@
 
 /*pc css reset*/
 body,div,ul,ol,li,img,p,dl,dt,dd,a,span,input,h1,h2,h3,h4,h5,h6,table,th,tr,td{margin: 0;padding: 0;}
-body{font-size: 14px;font-family: 'Microsoft YaHei',arial;}
+body{font-size: 14px;text-align: justify;font-family: 'Microsoft YaHei',arial;}
 a{text-decoration: none;color: #FF7200;}
 img{border: 0;display:block;}
 ul{overflow: hidden;list-style: none;}
