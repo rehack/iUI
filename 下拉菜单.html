@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="http://at.alicdn.com/t/font_415859_yirt3fmfsxl84cxr.css" rel="stylesheet">
+<style>
+    body,div,ul,ol,li,img,p,dl,dt,dd,a,span,input,h1,h2,h3,h4,h5,h6,table,th,tr,td,::before,::after,header,nav,section,footer{margin: 0;padding: 0;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;}
+    body{font-size: 14px;font-family: Helvetica,Tahoma,Arial,sans-serif,'Microsoft YaHei';min-width: 320px;max-width: 640px;margin-left: auto;margin-right: auto;padding-bottom: 0.6rem;background: #eee;}
+    a{text-decoration: none;color: #FF7200;}
+    img{border: 0;display:block;}
+    ul{overflow: hidden;list-style: none;}
+    table {border-collapse:collapse;border-spacing:0;}
+    input{border: 0;outline: none;-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+    input,a,button{tap-highlight-color: transparent;-webkit-tap-highlight-color: transparent;-moz-tap-highlight-color: transparent;}
+
+
+    /*移动端适配 width|height|font-size = 视觉稿量出来的值 / 100rem;@lbl*/
+    @media screen and (max-width:359px) and (min-width:320px) {
+        html{
+            font-size: 50px !important;
+        }
+    }
+    @media screen and (max-width:374px) and (min-width:360px) {
+        html{
+            font-size: 56.25px !important;
+        }
+    }
+    @media screen and (max-width:413px) and (min-width:375px) {
+       html{
+            font-size: 58.5px !important;
+        }
+    }
+    @media screen and (max-width:639px)  and (min-width:414px){
+       html{
+            font-size: 64.6px !important;
+        }
+    }@media screen and (min-width:640px) {
+       html{
+            font-size: 100px !important;
+        }
+    }
+
+    .top-item{
+        display: flex;
+        justify-content: space-around;
+        background: #07766d;
+        padding: 15px 0;
+        align-items: center;
+        z-index: 9;
+    }
+    .top .bc-tel,.top .menu{
+        color: #fff;
+        font-size: 18px;
+    }
+    .top .bc-weibiaoti12{
+        transform: rotate(0deg);
+        transition: all 0.3s linear;
+    }
+    .top .bc-guanbi{
+        transform: rotate(180deg);
+        transition: all 0.3s linear;
+    }
+    .top .top-list{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .top .top-list{
+        height: 0;
+        overflow: hidden;
+        transition: all 500ms;
+    }
+    .top .top-list a{
+        display: block;
+        color:#fff;
+        font-size: 18px;
+        text-align: center;
+        background: #22201f;
+        border-bottom: 1px solid #303131;
+        line-height: 50px;
+    }
+</style>
+</head>
+<body>
+    <div class="top">
+        <div class="top-item">
+            <a href="tel:02865006500" class="rehack bc-tel"></a>
+            <a class="logo" href="/">主页</a>
+            <div class="menu rehack bc-weibiaoti12" id="menu"></div>
+        </div>
+        <div class="top-list" id="top-list">
+            <a href="">菜单1</a>
+            <a href="">菜单2</a>
+            <a href="">菜单3</a>
+            <a href="">菜单4</a>
+        </div>
+    </div>
+
+    <script>
+        // 下拉菜单
+        var menu = document.querySelector('#menu');
+        var list = document.querySelector('#top-list');
+        var lists= document.querySelectorAll('#top-list a');
+
+        menu.addEventListener('click',function(){
+            var curClass = menu.getAttribute('class');
+            var targetHeight = (lists[0]).offsetHeight*lists.length;
+            // console.log(targetHeight)
+            if(curClass.indexOf('bc-weibiaoti12')!=-1){
+                menu.className='menu rehack bc-guanbi';
+                list.style.height=targetHeight+'px';
+            }else{
+                menu.className='menu rehack bc-weibiaoti12';
+                list.style.height=0;
+            }
+        })
+    </script>
+</body>
+</html>
