@@ -1,0 +1,10 @@
+剪音乐，开始时间和时长
+ffmpeg -i a.m4a -ss 00:12 -t 01:01.100 -acodec copy output.m4a
+
+
+
+ffmpeg -i video.mp4 -vn  -acodec libmp3lame -ac 2 -qscale:a 4 -ar 48000  audio.mp3
+
+
+从视频中截取图片：最后所得的图片张数=fps*视频时间秒数
+ffmpeg -i a.mp4 -vf fps=0.5 "a%04d.png"
