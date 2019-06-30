@@ -1,0 +1,7 @@
+1.记一次PHP升级7.3后文章页面502，首页正常
+开启PHP和nginx日志发现crayon-syntax-highlighter插件报错
+于是两种方案：升级crayon-syntax-highlighter插件https://crunchify.com/fix-for-crayon-syntax-highlighter-wordpress-plugin-and-php-7-3-fatal-error/
+新版crayon-syntax-highlighter下载地址https://github.com/Crunchify/crayon-syntax-highlighter/releases
+方案2是替换代码高亮插件为Enlighter，需要停用crayon-syntax-highlighter并做下兼容
+
+PS：出现502的原因可能还有nginx配置的fastcgi_pass unix:php-fpm.sock路径不对
