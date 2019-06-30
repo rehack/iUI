@@ -5,3 +5,5 @@
 方案2是替换代码高亮插件为Enlighter，需要停用crayon-syntax-highlighter并做下兼容
 
 PS：出现502的原因可能还有nginx配置的fastcgi_pass unix:php-fpm.sock路径不对
+
+2.wordpress插件如果安装或更新失败，可以进行手动安装，下载插件解压到/wp-content/plugins目录
