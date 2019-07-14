@@ -4,7 +4,7 @@
 
 2。手机本地备份可以备份的数据有：第三方软件以及应用数据，比如聊天记录，软件下载的视频，图片等；短信；便签；通话记录；通讯录；不可以备份的数据：照片；录音；各种转移到手机的文档、音乐、视频。可以把不能本地备份的同步到云服务、
 备份数据： 设置 → 更多设置 → 备份和重置 → 本地备份 → 新建备份； 等待备份完成后，手机连接电脑 → 将MIUI\backup文件夹复制到电脑硬盘保存； 
-恢复备份： 连接手机与电脑 → 将backup文件夹复制到手机MIUI文件夹 → 恢复备份。
+恢复备份： 连接手机与电脑 → 将backup文件夹复制到手机MIUI文件夹 → 恢复备份。backup文件夹下包括MAllBackup
 
 3.卡刷教程
 http://www.miui.com/download-313.html 刷机包和教程
@@ -15,6 +15,11 @@ http://www.miui.com/download-313.html 刷机包和教程
 申请小米账号解锁权限 ->下载小米解锁工具() ->手机连接电脑后按提示操作->关机进入Bootloader模式（关机后，同时按住开机键和音量下键）连接电脑与手机->在解锁软件里安装下驱动
 解锁教程http://www.miui.com/thread-3367802-1-1.html
 
-5.帮助手机重新上锁，很简单的，数据也不会丢失。http://www.miui.com/thread-4117944-1-1.html
+5.帮助手机重新上锁，很简单的，数据也不会丢失。
+http://www.miui.com/thread-3986711-1-1.html
+http://www.miui.com/thread-4117944-1-1.html
 
+如果上锁失败，可以用先刷来上锁 ，卡刷软件有个全部删除并lock的选项
+线刷教程http://www.miui.com/shuaji-393.html
 
+国际版MIUI http://en.miui.com/
